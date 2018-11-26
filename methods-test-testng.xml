@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+
+
+
+<suite name="TmpSuite" >
+<test name="TmpTest" >
+    <classes>
+        <class name="test.java.testNGBasicTest" />
+    <classes>
+</test>
+</suite>
+
+<!--<suite name="My suite"> parallel="tests" thread-count="5">-->
+<!--</suite>-->

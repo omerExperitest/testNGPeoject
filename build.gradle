@@ -1,0 +1,28 @@
+group 'repoter-demo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+
+    mavenCentral()
+}
+
+dependencies {
+
+    testCompile group: 'io.appium', name: 'java-client', version: '5.0.4'
+    compile fileTree(dir: 'C:\\Program Files\\Experitest\\Cloud\\Server\\repo\\com\\experitest\\appium-seetest-extension\\12.2', include: '*.jar')
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+
+}
+
+test {
+    useTestNG(){
+        outputDirectory = file("testngOutput")
+        reports.html.enabled=true
+        suites 'testng.xml'
+    }
+}

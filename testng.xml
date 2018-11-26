@@ -1,0 +1,69 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="My suite" parallel="tests" thread-count="3">
+    <test name="Firefox test no.1">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="testNGBasicBrowserTest"/>
+        </classes>
+    </test>
+    <test name="Chrome test no.1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testNGBasicBrowserTest"/>
+        </classes>
+    </test>
+    <test name="iOS test">
+        <parameter name="testName" value="iOS device demo test"/>
+        <classes>
+            <class name="iOSdemo"/>
+        </classes>
+    </test>
+    <!--<test name="my tests 3">-->
+        <!--<parameter name="browser" value="safari"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicBrowserTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="my tests 4">-->
+        <!--<parameter name="browser" value="safari"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="my tests 5">-->
+        <!--<parameter name="browser" value="safari"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="my tests 6">-->
+        <!--<parameter name="browser" value="chrome"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="my tests 7">-->
+        <!--<parameter name="browser" value="chrome"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="my tests 8">-->
+        <!--<parameter name="browser" value="chrome"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="my tests 9">-->
+        <!--<parameter name="browser" value="firefox"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="my tests 10">-->
+        <!--<parameter name="browser" value="chrome"/>-->
+        <!--<classes>-->
+            <!--<class name="testNGBasicTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+</suite>
