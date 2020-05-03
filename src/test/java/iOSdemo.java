@@ -16,13 +16,14 @@ public class iOSdemo {
     private String accessKey = "eyJ4cC51IjoyMTczLCJ4cC5wIjoyLCJ4cC5tIjoiTVRVek9EZzBOak16TnpNd05RIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjQ2OTI0NDYzMzcsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.Bw6n43YjA-z4gjTUVOtI_nzIZlIoQVO2WxfhnhdVH4U";
     protected IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
+    private final String DEFAULT_NAME = "demoTest1";
 
     @Parameters("testName")
     @BeforeTest
-    public void setUp(String testName) throws MalformedURLException {
-        System.out.println(new Date() + "\t" + "Starting test for - " + testName);
 
-        dc.setCapability("testName", testName);
+        public void setUp(@Optional(DEFAULT_NAME) String testName) throws MalformedURLException {
+        System.out.println(new Date() + "\t" + "Starting test for - " + testName);
+        dc.setCapability("testName", "sdsd");
         dc.setCapability("accessKey", accessKey);
         dc.setCapability("deviceQuery", "@os='ios' and @category='PHONE'");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");

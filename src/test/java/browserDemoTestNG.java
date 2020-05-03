@@ -15,9 +15,11 @@ public class browserDemoTestNG {
     private String accessKey = "eyJ4cC51IjoyMTczLCJ4cC5wIjoyLCJ4cC5tIjoiTVRVek9EZzBOak16TnpNd05RIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjQ2OTI0NDYzMzcsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.Bw6n43YjA-z4gjTUVOtI_nzIZlIoQVO2WxfhnhdVH4U";
     protected IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
+    private final String DEFAULT_NAME = "demoTest1";
+
 
     @BeforeTest()
-    public void setUp(String testName) throws MalformedURLException {
+    public void setUp(@Optional(DEFAULT_NAME) String testName) throws MalformedURLException {
         dc.setCapability("testName", "Quick Start iOS Native Demo");
         dc.setCapability("accessKey", accessKey);
         dc.setCapability("deviceQuery", "@os='ios' and @category='PHONE'");

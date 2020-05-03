@@ -5,6 +5,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -15,10 +16,12 @@ public class testNGBasicBrowserTest {
     private WebDriver driver;
     private URL url;
     private DesiredCapabilities dc = new DesiredCapabilities();
+    private final String BROWSER = "chrome";
+
 
     @Parameters("browser")
     @BeforeTest
-    public void setUp(String browser) throws Exception {
+    public void setUp(@Optional (BROWSER) String browser) throws Exception {
         System.out.println(new Date() + "\t" + "Starting test for - " + browser);
         url = new URL("https://qacloud.experitest.com/wd/hub");
         if (browser.equalsIgnoreCase("firefox")) {
@@ -59,14 +62,7 @@ public class testNGBasicBrowserTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        WebElement experitestLink = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div/div/div[1]/a/h3"));
-        experitestLink.click();
-        try {
-            Thread.sleep(8000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        WebElement freeTrial = driver.findElement(By.xpath("//*[@id=\"page_6858\"]/div[2]/div[1]/div[1]/a[1]/div"));
+
     }
 
 
