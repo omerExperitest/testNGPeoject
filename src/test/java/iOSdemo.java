@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class iOSdemo {
 
-    private String accessKey = "eyJ4cC51IjoyMTczLCJ4cC5wIjoyLCJ4cC5tIjoiTVRVek9EZzBOak16TnpNd05RIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjQ2OTI0NDYzMzcsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.Bw6n43YjA-z4gjTUVOtI_nzIZlIoQVO2WxfhnhdVH4U";
+    private String accessKey = "eyJ4cC51Ijo0NTExMTYsInhwLnAiOjIsInhwLm0iOiJNVFU0T0RVeE5UVXhOREk1TlEiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE5MDM4NzU1MTQsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.WtGN8_mBE_GgVw1SYjTbG7OSePmTsFVUiPRzOgt_J2g";
     protected IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
     private final String DEFAULT_NAME = "demoTest1";
@@ -29,8 +29,7 @@ public class iOSdemo {
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
         dc.setCapability("CustomerDemoName","ATB");
-        dc.setCapability("reporterURL","https://qacloud.experitest.com/reporter/#/test-view-view/852");
-        driver = new IOSDriver<>(new URL("https://qacloud.experitest.com/wd/hub"), dc);
+        driver = new IOSDriver<>(new URL("https://demo.experitest.com/wd/hub"), dc);
 
     }
 
@@ -54,7 +53,6 @@ public class iOSdemo {
 
     @AfterTest
     public void tearDown() {
-        System.out.println("Link to reporter is "+dc.getCapability("reporterURL").toString());
         driver.quit();
     }
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="My suite" parallel="tests" thread-count="3">
-    <test name="Firefox test no.1">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="testNGBasicBrowserTest"/>
-        </classes>
-    </test>
+<!--    <test name="Firefox test no.1">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="testNGBasicBrowserTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
     <test name="Chrome test no.1">
         <parameter name="browser" value="chrome"/>
         <classes>

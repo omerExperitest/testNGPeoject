@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class testNGBasicBrowserTest {
 
-    private static final String ACCESS_KEY = "eyJ4cC51IjoyMTczLCJ4cC5wIjoyLCJ4cC5tIjoiTVRVek9EZzBOak16TnpNd05RIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjQ2OTI0NDYzMzcsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.Bw6n43YjA-z4gjTUVOtI_nzIZlIoQVO2WxfhnhdVH4U";
+    private static final String ACCESS_KEY = "eyJ4cC51Ijo0NTExMTYsInhwLnAiOjIsInhwLm0iOiJNVFU0T0RVeE5UVXhOREk1TlEiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE5MDM4NzU1MTQsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.WtGN8_mBE_GgVw1SYjTbG7OSePmTsFVUiPRzOgt_J2g";
     private WebDriver driver;
     private URL url;
     private DesiredCapabilities dc = new DesiredCapabilities();
@@ -23,7 +23,7 @@ public class testNGBasicBrowserTest {
     @BeforeTest
     public void setUp(@Optional (BROWSER) String browser) throws Exception {
         System.out.println(new Date() + "\t" + "Starting test for - " + browser);
-        url = new URL("https://qacloud.experitest.com/wd/hub");
+        url = new URL("https://demo.experitest.com/wd/hub");
         if (browser.equalsIgnoreCase("firefox")) {
             dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
             dc.setCapability(CapabilityType.PLATFORM, Platform.ANY);
@@ -68,7 +68,6 @@ public class testNGBasicBrowserTest {
 
     @AfterTest
     public void tearDown() {
-        System.out.println("Link to reporter is " + dc.getCapability("reporterURL").toString());
         driver.quit();
     }
 }
